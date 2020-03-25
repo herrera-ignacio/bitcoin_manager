@@ -10,12 +10,13 @@ class Wallet:
             cls()
         return cls.__wallet
 
-    def __init__(self, currency: str, amount: float = 0):
+    def __init__(self, currency: str, funds: float = 0):
         if self.__class__.__wallet is not None:
             raise Exception("Wallet already created!")
         else:
-            self.__amount = amount
+            self.__funds = funds
             self.__currency = currency
+            print(f"Creating wallet with {currency}: {funds}")
             self.__class__.__wallet = self
 
     @property
@@ -27,30 +28,30 @@ class Wallet:
         self.__currency = name
 
     @property
-    def amount(self) -> float:
-        return self.__amount
+    def funds(self) -> float:
+        return self.__funds
 
     def deposit(self, amount: float):
-        self.__amount += amount
+        self.__funds += amount
 
     def withdraw(self, amount: float):
-        if self.amount - amount < 0:
+        if self.funds - amount < 0:
             raise ValueError(f"Not enough {self.currency}.")
         else:
-            self.amount -= amount
+            self.__funds -= amount
 
 
 class PesosWallet(Wallet):
-    def __init__(self, amount: float):
-        super().__init__("ARS", amount)
+    def __init__(self, funds: float):
+        super().__init__("ARS", funds)
 
 
 class DollarWallet(Wallet):
-    def __init__(self, amount: float):
-        super().__init__("USD", amount)
+    def __init__(self, funds: float):
+        super().__init__("USD", funds)
 
 
 class BitcoinWallet(Wallet):
-    def __init__(self, amount: float):
-        super().__init__("BTC", amount)
+    def __init__(self, funds: float):
+        super().__init__("BTC", funds)
 
