@@ -1,8 +1,9 @@
-from tracker import get_operations_from_file
+from tracker import Tracker
 
 
 def main():
-    get_operations_from_file()
+    my_tracker = Tracker()
+    print(my_tracker.get_last_buy())
 
 
 if __name__ == "__main__":
