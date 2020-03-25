@@ -14,7 +14,8 @@ with any provider.
 
 ### Core services
 
-* BTC Rates
+* Currency Reporter
+    * Currency Rates
 
 #### WIP
 

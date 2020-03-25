@@ -1,7 +1,7 @@
 from wallet import main as wallet
 from buyer import main as buyer
 from seller import main as seller
-from chart_reporter import main as chart_reporter
+from currency_reporter import main as chart_reporter
 
 
 def main():
