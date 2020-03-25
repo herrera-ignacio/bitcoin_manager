@@ -2,7 +2,6 @@ class Wallet:
     """
     Currency Wallet [SINGLETON]
     """
-    __currency = None
     __wallet = None
 
     @classmethod
@@ -11,16 +10,21 @@ class Wallet:
             cls()
         return cls.__wallet
 
-    def __init__(self, amount: float = 0):
+    def __init__(self, currency: str, amount: float = 0):
         if self.__class__.__wallet is not None:
             raise Exception("Wallet already created!")
         else:
             self.__amount = amount
+            self.__currency = currency
             self.__class__.__wallet = self
 
     @property
     def currency(self) -> str:
         return self.__currency
+
+    @currency.setter
+    def currency(self, name: str):
+        self.__currency = name
 
     @property
     def amount(self) -> float:
@@ -37,13 +41,16 @@ class Wallet:
 
 
 class PesosWallet(Wallet):
-    __currency = "ARS"
+    def __init__(self, amount: float):
+        super().__init__("ARS", amount)
 
 
 class DollarWallet(Wallet):
-    __currency = "USD"
+    def __init__(self, amount: float):
+        super().__init__("USD", amount)
 
 
 class BitcoinWallet(Wallet):
-    __currency = "BTC"
+    def __init__(self, amount: float):
+        super().__init__("BTC", amount)
 
