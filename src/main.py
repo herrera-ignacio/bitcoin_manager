@@ -1,16 +1,10 @@
-from wallet import main as wallet
-from buyer import main as buyer
-from seller import main as seller
-from currency_reporter import main as chart_reporter
+from currency_reporter import main as currency_reporter
 
 
 def main():
-    print("Manager ON")
+    print("[MANAGER] - Initializing")
+    currency_reporter.main()
 
 
 if __name__ == "__main__":
     main()
-    wallet.main()
-    buyer.main()
-    seller.main()
-    chart_reporter.main()

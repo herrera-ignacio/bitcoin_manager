@@ -12,11 +12,11 @@ class Wallet:
 
     def __init__(self, currency: str, funds: float = 0):
         if self.__class__.__wallet is not None:
-            raise Exception("Wallet already created!")
+            raise Exception("[WALLET] wallet already created!")
         else:
             self.__funds = funds
             self.__currency = currency
-            print(f"Creating wallet with {currency}: {funds}")
+            print(f"[WALLET] - Creating wallet with {currency}: {funds}")
             self.__class__.__wallet = self
 
     @property

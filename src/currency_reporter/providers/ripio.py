@@ -5,7 +5,7 @@ from .provider import Provider
 # Ripio updates rates every 1 min
 class RipioProvider(Provider):
     def __init__(self):
-        print("[Provider:Ripio] Loading...")
+        print("[PROVIDER:Ripio] OK")
         currencies = {
             "BTC": {
                 "name": "bitcoin",

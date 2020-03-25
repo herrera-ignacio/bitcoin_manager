@@ -15,11 +15,18 @@ with any provider.
 ### Core services
 
 * Currency Reporter
-    * Currency Rates
+    * Get Currency Rates
+* Wallet
+    * Available funds
+    * Current balance
+    
+### Setup
+
+1. Install requirements
+2. Set `funds.csv` with your own values
 
 #### WIP
 
 * Check balance (USD / $)
 * Trigger sell
 * Trigger buy
-* Scrap for bitcoin value
