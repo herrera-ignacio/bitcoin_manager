@@ -1,5 +1,9 @@
 """
 Handle operations.csv, read and write operations information
+
+What am I interested to know?
+* Last operation (what did I buy, ARS or BTC?)
+* 
 """
 import csv
 
@@ -11,6 +15,4 @@ def get_operations_from_file():
         for row in funds:
             raw_operations.append(row)
     return raw_operations
-
-
 
