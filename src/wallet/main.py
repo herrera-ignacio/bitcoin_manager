@@ -1,9 +1,10 @@
-from wallet import PesosWallet
+from wallet import PesosWallet, DollarWallet, BitcoinWallet
 
 
 def main():
     ars_wallet = PesosWallet(100)
-    print(ars_wallet.amount)
+    usd_wallet = DollarWallet(0)
+    btc_wallet = BitcoinWallet(0)
     print("Wallet ON")
 
 

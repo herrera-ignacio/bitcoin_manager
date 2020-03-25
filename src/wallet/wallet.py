@@ -1,8 +1,22 @@
 class Wallet:
+    """
+    Currency Wallet [SINGLETON]
+    """
     __currency = None
+    __wallet = None
+
+    @classmethod
+    def get_wallet(cls):
+        if cls.__wallet is None:
+            cls()
+        return cls.__wallet
 
     def __init__(self, amount: float = 0):
-        self.__amount = amount
+        if self.__class__.__wallet is not None:
+            raise Exception("Wallet already created!")
+        else:
+            self.__amount = amount
+            self.__class__.__wallet = self
 
     @property
     def currency(self) -> str:
